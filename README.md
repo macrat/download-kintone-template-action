@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download kintone app template
-        uses: macrat/download-kintone-template-action@v1
+        uses: macrat/download-kintone-template-action@v0
         with:
           base-url: ${{ secrets.KINTONE_BASE_URL }}
           username: ${{ secrets.KINTONE_USERNAME }}
