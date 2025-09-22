@@ -25,7 +25,7 @@ jobs:
         if: runner.os != 'Windows'
       - run: unzip ./template.zip -d ./template
         if: runner.os != 'Windows'
-      - run: grep -q "Test App" ./template/01/manifest.json
+      - run: grep -q "Test App" ./template/01/template.json
         if: runner.os != 'Windows'
-      - run: grep -q "This is a test app" ./template/01/manifest.json
+      - run: grep -q "This is a test app" ./template/01/template.json
         if: runner.os != 'Windows'
