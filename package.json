@@ -13,13 +13,11 @@
   "license": "MIT",
   "author": "",
   "type": "module",
-  "main": "src/main.js",
+  "main": "src/index.js",
   "scripts": {
-    "postinstall": "npx playwright install chromium-headless-shell",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@actions/core": "^1.11.1",
     "playwright": "^1.55.0"
   }
 }

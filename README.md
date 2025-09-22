@@ -71,7 +71,7 @@ App description for displaying on kintone settings screen.
 
 kintone設定画面に表示するアプリの説明。
 
-### `path` 
+### `output` 
 
 Path to save downloaded template zip file. (default: `./template.zip`)
 

@@ -4,9 +4,18 @@ branding:
   icon: download
   color: yellow
 runs:
-  using: 'node24'
-  pre: 'src/pre.js'
-  main: 'src/main.js'
+  using: docker
+  image: Dockerfile
+  env:
+    BASE_URL: ${{ inputs.base-url }}
+    APP_ID: ${{ inputs.app-id }}
+    APP_NAME: ${{ inputs.name }}
+    APP_DESCRIPTION: ${{ inputs.description }}
+    OUTPUT_PATH: ${{ inputs.output }}
+    USERNAME: ${{ inputs.username }}
+    PASSWORD: ${{ inputs.password }}
+    BASIC_AUTH_USERNAME: ${{ inputs['basic-auth-username'] }}
+    BASIC_AUTH_PASSWORD: ${{ inputs['basic-auth-password'] }}
 inputs:
   base-url:
     description: Base-url of your kintone (e.g. https://example.cybozu.com)
@@ -24,7 +33,7 @@ inputs:
     description: Description for exported template
     required: false
     default: ''
-  path:
+  output:
     description: Output file path
     required: false
     default: './template.zip'

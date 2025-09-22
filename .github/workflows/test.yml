@@ -3,16 +3,9 @@ on: [push, pull_request]
 
 jobs:
   test:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-      - run: npm ci
       - uses: ./
         with:
           base-url: ${{ secrets.KINTONE_BASE_URL }}
@@ -22,10 +15,6 @@ jobs:
           name: "Test App"
           description: "This is a test app"
       - run: test -f ./template.zip && echo "Template file exists"
-        if: runner.os != 'Windows'
       - run: unzip ./template.zip -d ./template
-        if: runner.os != 'Windows'
       - run: grep -q "Test App" ./template/01/template.json
-        if: runner.os != 'Windows'
       - run: grep -q "This is a test app" ./template/01/template.json
-        if: runner.os != 'Windows'
