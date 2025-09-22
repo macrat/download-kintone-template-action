@@ -1,0 +1,46 @@
+name: Download kintone template
+description: Download kintone app template file
+branding:
+  icon: download
+  color: yellow
+runs:
+  using: 'node24'
+  pre: 'src/pre.js'
+  main: 'src/main.js'
+inputs:
+  base-url:
+    description: Base-url of your kintone (e.g. https://example.cybozu.com)
+    required: true
+    default: ''
+  app-id:
+    description: kintone App ID
+    required: true
+    default: ''
+  name:
+    description: App name for exported template
+    required: false
+    default: ''
+  description:
+    description: Description for exported template
+    required: false
+    default: ''
+  path:
+    description: Output file path
+    required: false
+    default: './template.zip'
+  username:
+    description: Login username
+    required: true
+    default: ''
+  password:
+    description: "User's password"
+    required: true
+    default: ''
+  basic-auth-username:
+    description: Basic Auth username (if your kintone is protected by Basic Auth)
+    required: false
+    default: ''
+  basic-auth-password:
+    description: Basic Auth password (if your kintone is protected by Basic Auth)
+    required: false
+    default: ''

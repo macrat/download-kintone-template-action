@@ -1,0 +1,25 @@
+{
+  "name": "kintone-download-template-action",
+  "version": "1.0.0",
+  "description": "Download kintone app template file on GitHub Actions",
+  "homepage": "https://github.com/macrat/download-kintone-template-action#readme",
+  "bugs": {
+    "url": "https://github.com/macrat/download-kintone-template-action/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macrat/download-kintone-template-action.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "postinstall": "npx playwright install chromium-headless-shell",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "playwright": "^1.55.0"
+  }
+}
