@@ -116,7 +116,7 @@ jobs:
           password: ${{ secrets.KINTONE_PASSWORD }}
 
       - name: Create Release
-        runs: |
+        run: |
           gh release create $GITHUB_REF_NAME ./template.zip --title $GITHUB_REF_NAME --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
