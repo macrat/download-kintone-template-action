@@ -92,6 +92,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v5
 
@@ -106,7 +108,7 @@ jobs:
           desktop-css: ./src/desktop.css
 
       - name: Download kintone app template
-        uses: macrat/download-kintone-template-action@v1
+        uses: macrat/download-kintone-template-action@v0
         with:
           base-url: ${{ secrets.KINTONE_BASE_URL }}
           app-id: ${{ secrets.KINTONE_APP_ID }}
